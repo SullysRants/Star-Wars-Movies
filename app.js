@@ -1,11 +1,18 @@
 var express = require('express');
 var app = express();
 
+app.set('view engine', 'ejs');
+
+
+
 //Routes
 
 //home
 app.get('/', function(req, res){
-    res.send("This is a server response on the home page");
+    res.render('home', {
+        title : "Star Wars Movies",
+        movies : ["The First Move", "The Second Movie", "The Third Movie"]
+    });
 });
 
 //move_single
