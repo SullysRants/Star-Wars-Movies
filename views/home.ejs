@@ -6,11 +6,23 @@
 
   </head>
   <body>
-    <h1>Hello, world!</h1>
 
-   
+  <% include partials/header.ejs %>
+  <script src="https://use.fontawesome.com/0cb9c1b63d.js"></script>
+
+  <div id="hero-image">
+    <h1 id="hero-title"><%= title %></h1>
+  </div>
+
+  <div id="posters-wrapper" class="content-padding clearfix">
+    <% for (var i = 0; i < movies.length; i++) { %>
+     <div class ="poster">
+    <img src="/images/<%= movies[i].poster %>" class="img-responsive">
+    </div>
+    <% } %>
+  </div>
+
+
     <% include partials/scripts.ejs %>
-
-
   </body>
 </html>
